@@ -1,13 +1,17 @@
 package ru.miit;
 
+import ru.miit.annotations.ValidateLen;
+
 import java.util.ArrayList;
 
 public class RollingStock {
     private Integer lenStockAtConventionalWagons;
     private ArrayList<Wagon> wagonList;
 
-    public RollingStock() {
-        wagonList = new ArrayList<>();
+    @ValidateLen
+    public RollingStock(Integer len, ArrayList<Wagon> wagonList) {
+        lenStockAtConventionalWagons = len;
+        this.wagonList = wagonList;
     }
 
     public void setLenStockAtConventionalWagons(Integer lenStockAtConventionalWagons) {
