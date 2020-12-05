@@ -17,8 +17,8 @@ public class App {
         Set<ConstraintViolation<RollingStock>> violations = validator.validate(rollingStock);
 
         for (ConstraintViolation<RollingStock> violation : violations) {
-            System.out.println(rollingStock);
             System.out.println(violation.getMessage() + "\n");
+            throw new Error("Test");
         }
     }
 
@@ -33,14 +33,9 @@ public class App {
         wagonArrayList.add(secondWagon);
         wagonArrayList.add(thirdWagon);
 
-        RollingStock rollingStock = new RollingStock(3, wagonArrayList);
-
-        rollingStock.addWagon(firstWagon);
-        rollingStock.addWagon(secondWagon);
-        rollingStock.addWagon(thirdWagon);
+        RollingStock rollingStock = new RollingStock(2, wagonArrayList);
 
         validateRollingStock(rollingStock);
-
 
         System.out.println(rollingStock.toString());
     }

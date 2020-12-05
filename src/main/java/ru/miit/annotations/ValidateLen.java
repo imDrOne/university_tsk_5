@@ -11,13 +11,10 @@ import java.lang.annotation.Target;
 import static java.lang.annotation.ElementType.*;
 
 @Constraint(validatedBy = {RollingStockValidator.class})
-@Target({METHOD, FIELD, ANNOTATION_TYPE, CONSTRUCTOR, PARAMETER})
+@Target({TYPE})
 @Retention(RetentionPolicy.RUNTIME)
 public @interface ValidateLen {
     String message() default "Len value is not valid";
     Class<?>[] groups() default {};
     Class<? extends Payload>[] payload() default {};
-
-    int lenStockAtConventionalWagons() default 0;
-    int calculatedStock() default 0;
 }

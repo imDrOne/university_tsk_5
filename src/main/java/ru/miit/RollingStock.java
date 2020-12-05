@@ -4,11 +4,11 @@ import ru.miit.annotations.ValidateLen;
 
 import java.util.ArrayList;
 
+@ValidateLen
 public class RollingStock {
     private Integer lenStockAtConventionalWagons;
     private ArrayList<Wagon> wagonList;
 
-    @ValidateLen
     public RollingStock(Integer len, ArrayList<Wagon> wagonList) {
         lenStockAtConventionalWagons = len;
         this.wagonList = wagonList;
