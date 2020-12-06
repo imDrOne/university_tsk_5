@@ -1,0 +1,14 @@
+<constraint-mappings xmlns="http://jboss.org/xml/ns/javax/validation/mapping" version="1.1">
+    <bean class="ru.miit.RollingStock" ignore-annotations="true">
+        <field name="lenStockAtConventionalWagons">
+            <constraint annotation="javax.validation.constraints.NotNull">
+                <message>Name connot be null</message>
+            </constraint>
+        </field>
+        <field name="wagonList">
+            <constraint annotation="javax.validation.constraints.NotNull">
+                <message>Name connot be null</message>
+            </constraint>
+        </field>
+    </bean>
+</constraint-mappings>
