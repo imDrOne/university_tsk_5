@@ -1,6 +1,5 @@
 package ru.miit;
 
-
 import javax.validation.ConstraintViolation;
 import javax.validation.Validation;
 import javax.validation.Validator;
@@ -22,7 +21,6 @@ public class App {
         }
     }
 
-
     public static void main(String[] args) {
         ArrayList<Wagon> wagonArrayList = new ArrayList<>();
         Wagon firstWagon = new Wagon(UUID.randomUUID(), 1, 4, 10, 20);
@@ -35,7 +33,12 @@ public class App {
 
         RollingStock rollingStock = new RollingStock(2, wagonArrayList);
 
-        validateRollingStock(rollingStock);
+        try {
+            validateRollingStock(rollingStock);
+        } catch (Error e) {
+            e.printStackTrace();
+        }
+
 
         System.out.println(rollingStock.toString());
     }
